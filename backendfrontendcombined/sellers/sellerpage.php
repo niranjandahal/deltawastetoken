@@ -1,4 +1,5 @@
 <?php
+// make a beautiful and colorful ui for seller dashboard with many features
 include '../cors.php';
 include '../dbconnection.php';
 ?>
@@ -171,19 +172,17 @@ include '../dbconnection.php';
 
             <a href='./addproduct.php'>
                 <i class="fas fa-plus"></i>
-                <span>upload and get credit</span>
+                <span>Add Product</span>
             </a>
 
             <a href='./ordertodeliver.php'>
                 <i class="fas fa-truck"></i>
-                <span>sdfsaf</span>
+                <span></span>
             </a>
 
             <a href='./approveorder.php'>
-                <!-- <i class="fas fa-shopping-bag"></i>
-            notification icon -->
-                <i class="fas fa-bell"></i>
-                <span>See Request</span>
+                <i class="fas fa-shopping-bag"></i>
+                <span>See Order</span>
             </a>
 
             <a href='./sellerssignout.php'>
