@@ -13,9 +13,16 @@ $result = $conn->query($sql);
 $result1 = $conn->query($sql1);
 
 if ($result->num_rows > 0) {
+    $resultarray = array();
     while ($row = $result->fetch_assoc()) {
-        echo json_encode($row);
+        $temparray = array(
+            'wasteproduct_price' => $row['wasteproduct_price'],
+            'supply' => $row['supply'],
+            'demand' => $row['demand'],
+        );
+        $resultarray[] = $temparray;
     }
+    echo json_encode($resultarray);
 } else {
     echo "0 results";
 }

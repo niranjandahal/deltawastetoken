@@ -153,9 +153,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             echo '<img src="' . $productdetails[0]['wasteproduct_image'] . '" alt="' . $productdetails[0]['wasteproduct_name'] . '">
         <h1>' . $productdetails[0]['wasteproduct_name'] . '</h1>
         <p>' . $productdetails[0]['wasteproduct_description'] . '</p><br><br>
-        <p>Price: NPR ' . $productdetails[0]['wasteproduct_price'] . '</p><br><br>
-        <p> Seller Name: ' . $productdetails[0]['seller_name'] . '</p><br><br>
-        <p> Seller Address: ' . $productdetails[0]['seller_address'] . '</p><br><br>
+        <p>Credit Token: DT ' . $productdetails[0]['wasteproduct_price'] . '</p><br><br>
+        <p>  Name: ' . $productdetails[0]['seller_name'] . '</p><br><br>
+        <p> Target Address: ' . $productdetails[0]['seller_address'] . '</p><br><br>
 
         <button class="btn" onclick="buyNow(' . $productid . ')">Buy Now</button>';
         } else {

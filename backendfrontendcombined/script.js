@@ -27,10 +27,10 @@ function sendPostRequest() {
                     <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">
                         ${product.product_category}
                     </h3>
-                    <h2 class="text-white title-font text-lg font-medium">
+                    <h2 class="text-black title-font text-lg font-medium">
                         ${product.product_name}
                     </h2>
-                    <p class="mt-1">Nrs.${product.product_price}</p>
+                    <p class="mt-1">${product.product_price} DT</p>
                 </div>
             </div>
         `;

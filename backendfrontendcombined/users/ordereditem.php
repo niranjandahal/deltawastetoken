@@ -145,17 +145,18 @@ if (isset($_SESSION['userloggedin']) && $_SESSION['userloggedin'] === 'true') {
     <header>
     </header>
     <?php
-  
+
     ?>
+    <button id="connect" class="connectmetamask">Connect to MetaMask</button>
     <div class="tittle">
         <h2>Pending Ordered</h2>
         <p class="confirmedordertext">Be Patience! it might take up to 12 hours for seller to confirm</p>
 
     </div>
-    <button id="connect" class="connectmetamask">Connect to MetaMask</button>
+
     <section>
         <?php
-       
+
         for ($i = 1; $i < $orderitemlength; $i++) {
             $productid = $ordereditemarray[$i];
             $sql1 = "SELECT * FROM wasteproducts WHERE id = $productid";
@@ -193,11 +194,11 @@ if (isset($_SESSION['userloggedin']) && $_SESSION['userloggedin'] === 'true') {
 
     <div class="tittle">
         <h2>Confirmed order</h2>
-        
+
     </div>
     <section>
         <?php
-        
+
         for ($i = 1; $i < $approveditemlength; $i++) {
             $productid = $approveditemarray[$i];
             $sql1 = "SELECT * FROM wasteproducts WHERE id = $productid";
