@@ -84,14 +84,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['use_credit'])) {
 
                     </button>
                 </div>
-
                 <div class="bg-white p-8 rounded-lg shadow-lg">
                     <h2 class="text-2xl font-bold mb-4">Buy Solar Panel</h2>
                     <p class="text-gray-600 mb-6">Use credits in exchange of solar panels</p>
                     <button class="bg-blue-500 text-white py-2 px-4 rounded-full">
                         <a href="burncredit.php">Exchange</a>
-
-
                     </button>
                 </div>
 
