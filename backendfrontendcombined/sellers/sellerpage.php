@@ -177,12 +177,13 @@ include '../dbconnection.php';
 
             <a href='./ordertodeliver.php'>
                 <i class="fas fa-truck"></i>
-                <span></span>
+                <span>prepate it </span>
             </a>
 
             <a href='./approveorder.php'>
-                <i class="fas fa-shopping-bag"></i>
-                <span>See Order</span>
+                <!-- <i class="fas fa-shopping-bag"></i>  notify-->
+                <i class="fas fa-bell"></i>
+                <span>Sell request</span>
             </a>
 
             <a href='./sellerssignout.php'>

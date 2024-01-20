@@ -1,5 +1,6 @@
 <?php
 include '../cors.php';
+include '../dbconnection.php';
 session_name('validseller');
 session_start();
 
@@ -16,7 +17,6 @@ echo $receivedSellerId;
 $query = "SELECT * FROM sellers WHERE id = $receivedSellerId";
 $result = mysqli_query($conn, $query);
 
-echo $result;
 
 if (mysqli_num_rows($result) > 0) {
     $seller = mysqli_fetch_assoc($result);

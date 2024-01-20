@@ -47,7 +47,7 @@ async function mintfunction() {
     } else {
         alert("Please install MetaMask")
     }
-    window.location.href='http://localhost/php/deltahackathon/WasteKon/BackendFrontendcombine/users/ordereditem.php';
+    window.location.href='http://localhost/php/deltawastekon/backendfrontendcombined/users/ordereditem.php';
     }
 
 
