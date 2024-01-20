@@ -12,7 +12,7 @@ if (!isset($_SESSION['ref_seller_id']) || !isset($_SESSION['seller_name']) || !i
 }
 
 $receivedSellerId = $_SESSION['ref_seller_id'];
-echo $receivedSellerId;
+// echo $receivedSellerId;
 
 $query = "SELECT * FROM sellers WHERE id = $receivedSellerId";
 $result = mysqli_query($conn, $query);
@@ -40,119 +40,64 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['use_credit'])) {
 }
 
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Seller Profile</title>
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            background-color: #f8f9fa;
-            color: #495057;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-        }
-
-        header {
-            background-color: #007bff;
-            color: #fff;
-            padding: 20px;
-            text-align: center;
-            font-size: 24px;
-        }
-
-        .container {
-            max-width: 400px;
-            width: 100%;
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            padding: 20px;
-            box-sizing: border-box;
-            margin-top: 20px;
-        }
-
-        .profile-card {
-            text-align: center;
-        }
-
-        h2 {
-            color: #007bff;
-        }
-
-        p {
-            margin: 10px 0;
-            color: #343a40;
-        }
-
-        label {
-            display: block;
-            margin-top: 10px;
-            font-weight: bold;
-            color: #007bff;
-        }
-
-        input {
-            width: calc(100% - 20px);
-            padding: 10px;
-            margin-top: 5px;
-            box-sizing: border-box;
-            border: 1px solid #ced4da;
-            border-radius: 5px;
-        }
-
-        button {
-            background-color: #007bff;
-            color: #fff;
-            border: none;
-            padding: 12px 20px;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 16px;
-            margin-top: 15px;
-            transition: background-color 0.3s ease;
-        }
-
-        button:hover {
-            background-color: #0056b3;
-        }
-    </style>
+    <title>Perks Redemption</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
 
-<body>
+<body class="bg-gray-100 font-sans h-screen">
 
+    <!-- simple seller details -->
 
-
-    <div class="container">
-
-        <div class="profile-card">
-            <h2><?= isset($seller) ? $seller['full_name'] : 'Manage Products to Earn Credits' ?></h2>
-
-            <?php if ($seller) : ?>
-                <p><strong>Email:</strong> <?= $seller['email'] ?></p>
-                <p><strong>Phone:</strong> <?= $seller['phone_number'] ?></p>
-                <p><strong>Address:</strong> <?= $seller['address'] ?></p>
-                <p><strong>Credit Score:</strong> <?= $seller['creditscore'] ?></p>
-                <form method="post" action="">
-                    <label for="selected_score">Select Score to Use:</label>
-                    <input type="number" name="selected_score" min="1" max="<?= $seller['creditscore'] ?>" required>
-                    <button type="submit" name="use_credit">Use Credit</button>
-                </form>
-            <?php endif; ?>
+    <div class="container mx-auto h-full flex justify-center items-center">
+        <div class="bg-white p-8 rounded-lg shadow-lg">
+            <h2 class="text-2xl font-bold mb-4">your info</h2>
+            <p class="text-gray-600 mb-6"> Name: <?php echo $seller['full_name']; ?></p>
+            <p class="text-gray-600 mb-6"> Email: <?php echo $seller['email']; ?></p>
+            <p class="text-gray-600 mb-6">Credit Score: <?php echo $seller['creditscore']; ?></p>
         </div>
 
-    </div>
+        <div class="container mx-auto h-full flex flex-col justify-center items-center">
+            <h1 class="text-3xl font-bold mb-4">Credit Redemption</h1>
 
-    <script src="../../web3/index.js" type="module"></script>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-white p-8 rounded-lg shadow-lg">
+                    <h2 class="text-2xl font-bold mb-4">NEA Electricity</h2>
+                    <p class="text-gray-600 mb-6">Exchange credits with electricity.</p>
+                    <button class="bg-blue-500 text-white py-2 px-4 rounded-full">
+                        <a href="burncredit.php">Exchange</a>
+                    </button>
+                </div>
 
+                <div class="bg-white p-8 rounded-lg shadow-lg">
+                    <h2 class="text-2xl font-bold mb-4">EV car</h2>
+                    <p class="text-gray-600 mb-6">Use credits to exchange with electric cars. </p>
+                    <button class="bg-blue-500 text-white py-2 px-4 rounded-full">
+
+                        <a href="burncredit.php">Exchange</a>
+
+                    </button>
+                </div>
+
+                <div class="bg-white p-8 rounded-lg shadow-lg">
+                    <h2 class="text-2xl font-bold mb-4">Buy Solar Panel</h2>
+                    <p class="text-gray-600 mb-6">Use credits in exchange of solar panels</p>
+                    <button class="bg-blue-500 text-white py-2 px-4 rounded-full">
+                        <a href="burncredit.php">Exchange</a>
+
+
+                    </button>
+                </div>
+
+
+            </div>
+        </div>
 </body>
 
 </html>
