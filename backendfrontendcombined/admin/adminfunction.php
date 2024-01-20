@@ -123,34 +123,6 @@ function allnonapprovedproduct()
   }
 }
 
-
-// function allnonapprovedproductsellername()
-// {
-//   global $conn;
-//   $query = "SELECT products.*, sellers.full_name AS seller_name FROM products INNER JOIN sellers ON products.seller_id = sellers.id WHERE products.approved = 0 ORDER BY products.seller_id DESC";
-//   $result = mysqli_query($conn, $query);
-
-//   if (mysqli_num_rows($result) > 0) {
-//     while ($row = mysqli_fetch_assoc($result)) {
-//       echo "<h3> Product name : " . $row['product_name'] . "</h3>";
-//       echo "<p> Product description : " . $row['product_description'] . "</p>";
-//       echo "<p>Product Price: $" . $row['product_price'] . "</p>";
-//       echo "<p>category of the prodcut : " . $row['product_category'] . "</p>";
-//       echo "<img src='../uploads/" . $row['product_image'] . "' alt='Product Image' width='200' height='200' />";
-//       echo "<form method='post' action='approveproduct.php'>";
-//       echo "<input type='hidden' name='product_id' value='" . $row['id'] . "' />";
-//       echo "<input type='submit' name='approve' value='Approve' />";
-//       echo "<input type='submit' name='reject' value='Reject' />";
-//       echo "</form>";
-//     }
-
-//     exit();
-//   } else {
-//     echo "<script>alert('No pending Product')</script>";
-//     echo "<script>window.location.href='adminpanel.php'</script>";
-//     exit();
-//   }
-// }
 function allnonapprovedproductsellername()
 {
   global $conn;
