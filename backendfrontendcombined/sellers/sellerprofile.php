@@ -11,9 +11,12 @@ if (!isset($_SESSION['ref_seller_id']) || !isset($_SESSION['seller_name']) || !i
 }
 
 $receivedSellerId = $_SESSION['ref_seller_id'];
+echo $receivedSellerId;
 
 $query = "SELECT * FROM sellers WHERE id = $receivedSellerId";
 $result = mysqli_query($conn, $query);
+
+echo $result;
 
 if (mysqli_num_rows($result) > 0) {
     $seller = mysqli_fetch_assoc($result);
@@ -126,7 +129,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['use_credit'])) {
 
 <body>
 
-        
+
 
     <div class="container">
 

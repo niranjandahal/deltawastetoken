@@ -171,17 +171,19 @@ include '../dbconnection.php';
 
             <a href='./addproduct.php'>
                 <i class="fas fa-plus"></i>
-                <span>Add Product</span>
+                <span>upload and get credit</span>
             </a>
 
             <a href='./ordertodeliver.php'>
                 <i class="fas fa-truck"></i>
-                <span>Order to Deliver</span>
+                <span>sdfsaf</span>
             </a>
 
             <a href='./approveorder.php'>
-                <i class="fas fa-shopping-bag"></i>
-                <span>See Order</span>
+                <!-- <i class="fas fa-shopping-bag"></i>
+            notification icon -->
+                <i class="fas fa-bell"></i>
+                <span>See Request</span>
             </a>
 
             <a href='./sellerssignout.php'>
